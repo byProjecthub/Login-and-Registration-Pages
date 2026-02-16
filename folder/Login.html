@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login UI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Eye Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 900px;
+            height: 600px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* LOGIN PANEL */
+
+        .login-box {
+            padding: 45px 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .login-box h2 {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .login-box p {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        /* INPUT */
+
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .input-group label {
+            font-size: 13px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        /* Eye Icon */
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 38px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        /* OPTIONS */
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin: 12px 0;
+        }
+
+        .options a {
+            text-decoration: none;
+            color: #4b5cff;
+        }
+
+        .signin {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            background: #4b5cff;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 11px;
+            margin-top: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .signup {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        .signup a {
+            color: #4b5cff;
+            text-decoration: none;
+        }
+
+        /* RIGHT DASHBOARD PANEL */
+
+        .right-panel {
+            background: linear-gradient(135deg, #3f4cdd, #5d74ff);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* FIXED */
+            align-items: center;
+            /* FIXED */
+            text-align: center;
+            padding: 40px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 240px;
+            color: black;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 8px solid #e6e9ff;
+            border-top: 8px solid #4b5cff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 15px auto 0;
+        }
+
+        .center-text h3 {
+            margin-bottom: 8px;
+        }
+
+        .dots {
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #cfd5ff;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        /* Responsive */
+
+        @media(max-width:800px) {
+            .container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT LOGIN -->
+        <div class="login-box">
+
+            <div class="logo">
+                <div style="width:14px;height:14px;background:#4b5cff;border-radius:4px"></div>
+                <span>Untitled UI</span>
+            </div>
+
+            <h2>Log in</h2>
+            <p>Welcome back! Please enter your details.</p>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password">
+                <i class="fa-solid fa-eye toggle-password" onclick="togglePassword()"></i>
+            </div>
+
+            <div class="options">
+                <label><input type="checkbox"> Remember for 30 days</label>
+                <a href="forget-password.html">Forgot password</a>
+            </div>
+
+            <button class="signin">Sign in</button>
+            <button class="google-btn">Sign in with Google</button>
+
+            <div class="signup">
+                Don't have an account? <a href="#">Sign up</a>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT DASHBOARD -->
+        <div class="right-panel">
+
+            <div class="dashboard-card">
+                <small>Users over time</small>
+                <hr style="margin:8px 0">
+                <p>📈 Growth analytics preview</p>
+
+                <div class="circle">1,000</div>
+            </div>
+
+            <div class="center-text">
+                <h3>Welcome to your new dashboard</h3>
+                <p>Sign in to explore changes we've made.</p>
+            </div>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PASSWORD TOGGLE SCRIPT -->
+    <script>
+        function togglePassword() {
+            const password = document.getElementById("password");
+            const icon = document.querySelector(".toggle-password");
+
+            if (password.type === "password") {
+                password.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                password.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #007bff, #00c6ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  align-content: center;
+}
+
+.form {
+  background: white;
+  padding: 35px;
+  width: 400px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.form h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 25px;
+}
+
+/* Two column layout */
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.field label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.field input {
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.field input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+.field small {
+  font-size: 12px;
+  color: gray;
+  margin-top: 4px;
+}
+
+/* Button */
+.save-btn {
+  width: 100%;
+  padding: 13px;
+  background: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+/* Login text */
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.registration-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.registration-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.registration-link a:hover {
+  text-decoration: underline;
+}
+
+
+.forgetpassword-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.forgetpassword-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.fogetpassword-link a:hover {
+  text-decoration: underline;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .row {
+      flex-direction: column;
+  }
+}
+
+
+
+/*modal code*/
+
+/* Hide modal by default */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show modal when targeted */
+.modal-overlay:target {
+  display: flex;
+}
+
+/* Modal box */
+.modal-box {
+  background: white;
+  padding: 25px;
+  width: 400px;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+/* Open button styling */
+.open-modal-btn {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Make modal form match main form */
+.modal-box .form {
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Center modal text nicely */
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Center modal text nicely */
+.h3 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.field label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+  text-align: center;
+}
+
+.field input {
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.field input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  outline: none;
+  text-align: center;
+}
+
+.field small {
+  font-size: 12px;
+  color: gray;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* Timer text */
+.timer-text {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Timer bar */
+.timer-bar {
+  height: 6px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.timer-bar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #007bff;
+  animation: otpCountdown 60s linear forwards;
+}
+
+/* Disable OTP submit initially */
+.modal-overlay:target .otp-btn {
+  pointer-events: none;
+  opacity: 0.5;
+  animation: enableOtpBtn 0s linear 60s forwards;
+}
+
+/* Hide resend button initially */
+.resend-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #28a745;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Show resend after 60 seconds */
+.modal-overlay:target .resend-btn {
+  animation: showResend 0s linear 60s forwards;
+}
+
+/* Animations */
+@keyframes otpCountdown {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes enableOtpBtn {
+  to {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+@keyframes showResend {
+  to {
+    display: block;
+  }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Verification</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:420px;
+    background:white;
+    padding:45px 40px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Header */
+
+h2{
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.subtitle{
+    font-size:13px;
+    color:#888;
+    margin-bottom:20px;
+}
+
+.timer-text{
+    font-size:12px;
+    color:#999;
+    margin-bottom:10px;
+}
+
+/* Timer Bar */
+
+.timer-bar{
+    height:6px;
+    width:100%;
+    background:#e6e9ff;
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.timer-progress{
+    height:100%;
+    width:100%;
+    background:#4b5cff;
+    animation: countdown 60s linear forwards;
+}
+
+@keyframes countdown{
+    from{width:100%;}
+    to{width:0%;}
+}
+
+/* Input */
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    font-size:13px;
+    display:block;
+    margin-bottom:5px;
+}
+
+.field input{
+    width:100%;
+    padding:12px;
+    border-radius:6px;
+    border:1px solid #ddd;
+}
+
+/* Buttons */
+
+.save-btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    background:#4b5cff;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:500;
+    margin-top:10px;
+}
+
+.resend-btn{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.back-link{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    font-size:13px;
+}
+
+.back-link a{
+    text-decoration:none;
+    color:#4b5cff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<form method="POST" action="password-reset.html">
+
+    <h2>Enter OTP</h2>
+    <p class="subtitle">Check your email for your verification code</p>
+
+    <p class="timer-text">
+        You can resend OTP after 60 seconds
+    </p>
+
+    <div class="timer-bar">
+        <div class="timer-progress"></div>
+    </div>
+
+    <div class="field">
+        <label>OTP Code</label>
+        <input type="number" placeholder="Enter OTP" name="otp" required>
+    </div>
+
+    <button type="submit" class="save-btn">
+        Verify OTP
+    </button>
+
+</form>
+
+<form method="POST" action="resend_otp.php">
+    <button type="submit" class="resend-btn">
+        Resend OTP
+    </button>
+</form>
+
+<div class="back-link">
+    <a href="login.html">Back to Login</a>
+</div>
+
+</div>
+
+</body>
+</html>
