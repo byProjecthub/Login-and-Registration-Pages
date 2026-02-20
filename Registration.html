@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/css.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<!-- LEFT REGISTRATION -->
+<div class="registration-box">
+
+<form method="POST" action="">
+
+    <div class="logo">
+        <div style="width:14px;height:14px;background:#4b5cff;border-radius:4px"></div>
+        <span>Untitled UI</span>
+    </div>
+
+    <h2>Create Account</h2>
+    <p>Please fill in your details below</p>
+
+    <div class="input-group">
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name" name="name" required>
+    </div>
+
+    <div class="input-group">
+        <label>Surname</label>
+        <input type="text" placeholder="Enter your surname" name="surname" required>
+    </div>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" name="email" required>
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Create Password" name="password" required>
+        <i class="fa-solid fa-eye toggle-password"
+           onclick="togglePassword('password', this)"></i>
+    </div>
+
+    <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirm_password" placeholder="Re-enter Password" name="confirm_password" required>
+        <i class="fa-solid fa-eye toggle-password"
+           onclick="togglePassword('confirm_password', this)"></i>
+    </div>
+
+    <button type="submit" class="create-btn">Create Account</button>
+    <button type="button" class="google-btn">Sign up with Google</button>
+
+    <div class="signup">
+        Already have an account? <a href="login.html">Login</a>
+    </div>
+
+</form>
+
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="right-panel">
+
+    <div class="dashboard-card">
+        <small>New User Registration</small>
+        <hr style="margin:8px 0">
+        <p>📈 Registration Portal</p>
+    </div>
+
+    <div class="center-text">
+        <h3>Welcome to our website</h3>
+        <p>Sign up to explore our products and services</p>
+    </div>
+
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function togglePassword(fieldId, icon){
+    const field = document.getElementById(fieldId);
+
+    if(field.type === "password"){
+        field.type = "text";
+        icon.classList.replace("fa-eye","fa-eye-slash");
+    }else{
+        field.type = "password";
+        icon.classList.replace("fa-eye-slash","fa-eye");
+    }
+}
+</script>
+
+</body>
+</html>
